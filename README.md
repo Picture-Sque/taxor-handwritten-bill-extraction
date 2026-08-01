@@ -4,7 +4,7 @@ Evaluating vision-capable LLMs for structured data extraction from handwritten I
 
 ## Overview
 
-Brief description of the project goal: benchmark Google Gemini, Anthropic Claude, and OpenRouter Vision models on handwritten Indian bill extraction accuracy and cost efficiency, with optional Zoho Books integration.
+This project benchmarks Google Gemini, Anthropic Claude, and OpenRouter Vision models on handwritten Indian bill extraction accuracy and cost efficiency, with optional Zoho Books integration and a bonus interactive web UI for live side-by-side model comparison.
 
 ## Setup
 
@@ -29,9 +29,41 @@ cp .env.example .env
 
 # Perform a dry run to verify estimated tokens & cost guardrails without calling APIs
 python src/run_pipeline.py --dry-run
+
+# Run extraction on all 15 bills (Gemini + OpenRouter, Claude excluded — see Setup note)
+python src/run_pipeline.py --models gemini openrouter
 ```
 
+## Web UI — Interactive Bill Extractor
+
+A bonus single-page web interface lets you upload any bill image and see both models' extraction results side-by-side in real time — no CLI required.
+
+### Features
+- **Drag-and-drop** bill image upload (JPG, PNG, WEBP — up to 16 MB)
+- **Parallel extraction** — Gemini and Gemma run simultaneously, so total wait ≈ the slower of the two, not their sum
+- **Side-by-side results table** — all 6 fields displayed per model
+- **Agreement colouring** — 🟢 green row if both models return the same value, 🟡 yellow if they disagree, so divergence is immediately visible
+- **Per-model metadata** — latency (seconds) and estimated cost per call shown as badges
+- **Dark-themed, responsive UI** — no build step, no framework, single Python file
+
+### Running the UI
+
+```bash
+# From the project root (virtual environment active, .env populated)
+python ui/app.py
+```
+
+Then open **http://127.0.0.1:5000** in any browser.
+
+> [!NOTE]
+> Free-tier models — Gemma via OpenRouter averages 10–23 s per call. The UI shows a "Free-tier models — responses may take 10+ seconds" notice and a spinner so you know it's working.
+
+### Deployment Note
+
+This UI is **local-only** — Vercel, Netlify, and similar serverless platforms impose a ~10 s CPU timeout per function invocation, which Gemma's free-tier latency consistently exceeds. Local execution (or a persistent VPS like Railway/Fly.io) is the correct deployment target for any backend that calls these APIs.
+
 ## Dataset
+
 
 The dataset consists of 15 handwritten bills spanning common Indian small-business formats — kirana store, tea stall, auto rickshaw fare, tailor, hardware/paint shop, dhaba, pharmacy, stationery/xerox shop, electrician service, vegetable vendor, mobile repair, bakery, laundry, cycle repair, and carpenter/furniture work.
 
