@@ -1,0 +1,139 @@
+[
+  {
+    "bill_01.jpg": {
+      "vendor": "Sharma General Store",
+      "bill_number": "245",
+      "date": "2026-07-15",
+      "amount": 558,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Kirana store, no GST shown (small unregistered vendor), normal handwriting"
+    },
+    "bill_02.jpg": {
+      "vendor": "Raju Tea Point",
+      "bill_number": null,
+      "date": "2026-07-16",
+      "amount": 70,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Tea stall chit, no bill number by design, normal handwriting"
+    },
+    "bill_03.jpg": {
+      "vendor": "Auto No. KL-08-AX-4521",
+      "bill_number": null,
+      "date": "2026-07-17",
+      "amount": 145,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Auto rickshaw fare receipt, vendor field is the auto registration number, no bill number by design"
+    },
+    "bill_04.jpg": {
+      "vendor": "Mohan Tailors",
+      "bill_number": "T-118",
+      "date": "2026-07-12",
+      "amount": 850,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Tailor shop, no GST shown, normal handwriting"
+    },
+    "bill_05.jpg": {
+      "vendor": "Balaji Hardware & Paints",
+      "bill_number": "3391",
+      "date": "2026-07-18",
+      "amount": 871.50,
+      "currency": "INR",
+      "tax_details": "GST 5% = INR 41.50",
+      "notes": "Hardware/paint shop, subtotal INR 830 + GST INR 41.50, normal handwriting"
+    },
+    "bill_06.jpg": {
+      "vendor": "Annapurna Dhaba",
+      "bill_number": "0087",
+      "date": "2026-07-19",
+      "amount": 240,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Roadside dhaba, no GST shown, written messier/faster to simulate busy dinner rush"
+    },
+    "bill_07.jpg": {
+      "vendor": "City Medical Store",
+      "bill_number": "PH-5567",
+      "date": "2026-07-20",
+      "amount": 177,
+      "currency": "INR",
+      "tax_details": "GST 12% = INR 18.96",
+      "notes": "Pharmacy, subtotal INR 158 + GST, total rounded to INR 177 as written on bill, messier handwriting"
+    },
+    "bill_08.jpg": {
+      "vendor": "Sri Ganesh Stationery & Xerox",
+      "bill_number": "621",
+      "date": "2026-07-21",
+      "amount": 150,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Stationery/photocopy shop, no GST shown, messier handwriting"
+    },
+    "bill_09.jpg": {
+      "vendor": "Suresh Electricals",
+      "bill_number": null,
+      "date": "2026-07-22",
+      "amount": 750,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Electrician service bill on plain paper, no printed bill number by design, messier handwriting (end of workday)"
+    },
+    "bill_10.jpg": {
+      "vendor": "Lakshmi Vegetable Stall",
+      "bill_number": null,
+      "date": "2026-07-23",
+      "amount": 200,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Vegetable vendor, no bill number by design, written with non-dominant hand (deliberately hard to read)"
+    },
+    "bill_11.jpg": {
+      "vendor": "Quick Fix Mobile Care",
+      "bill_number": "MR-0912",
+      "date": "2026-07-24",
+      "amount": 2360,
+      "currency": "INR",
+      "tax_details": "GST 18% = INR 360",
+      "notes": "Mobile repair shop, subtotal INR 2000 + GST, written with non-dominant hand (deliberately hard to read)"
+    },
+    "bill_12.jpg": {
+      "vendor": "Fresh Bake House",
+      "bill_number": "445",
+      "date": "2026-07-25",
+      "amount": 370,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Bakery, no GST shown, written small/cramped"
+    },
+    "bill_13.jpg": {
+      "vendor": "Clean Care Laundry",
+      "bill_number": "L-77",
+      "date": "2026-07-26",
+      "amount": 300,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Laundry/dhobi receipt, no GST shown, written small/cramped"
+    },
+    "bill_14.jpg": {
+      "vendor": "Anna Cycle & Bike Works",
+      "bill_number": "209",
+      "date": "2026-07-27",
+      "amount": 150,
+      "currency": "INR",
+      "tax_details": null,
+      "notes": "Cycle/bike repair shop, no GST shown, written in pencil and slightly smudged"
+    },
+    "bill_15.jpg": {
+      "vendor": "Kumar Furniture Works",
+      "bill_number": "KF-334",
+      "date": "2026-07-28",
+      "amount": 784,
+      "currency": "INR",
+      "tax_details": "GST 12% = INR 84",
+      "notes": "AMBIGUOUS GROUND TRUTH: amount digit deliberately smudged (pencil), genuinely readable as either INR 784 or INR 789. Ground truth set to 784 based on the subtotal (INR 700) + 12% GST (INR 84) math, which is the more defensible reading. Scored with partial credit tolerance in scorer.py's 5% amount threshold to account for this ambiguity. This bill is intentionally used in the write-up to discuss how ground truth was determined for illegible cases."
+    }
+  }
+]

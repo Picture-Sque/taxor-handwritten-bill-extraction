@@ -1,0 +1,26 @@
+# Environment & Secrets
+.env
+*.env
+
+# Python Environment & Cache
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Data & Output Files
+data/bills/*.jpg
+data/bills/*.jpeg
+data/bills/*.png
+!data/bills/.gitkeep
+results/raw_extractions.json
+results/*.csv
+!results/.gitkeep
+
+# IDE & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
